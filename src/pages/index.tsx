@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+// import styles from '@/styles/Home.module.css'
+import { CardImage } from '@/components/Card'
+import { Button } from '@/components/Button'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,108 +16,63 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main>
+        <div className='flex items-center justify-center h-[100vh] w-full'>
+          <div className='bg-black w-[818px] h-[627px] rounded-md'>
+            <div className='w-full flex justify-center space-x-4 py-10 my-10'>
+              <div>
+                <CardImage src='/card-title.png' />
+              </div>
+              <div>
+                <CardImage src='/card-2.png' />
+              </div>
+              <div>
+                <CardImage src='/card-A.png' />
+              </div>
+            </div>
+            <div className='flex justify-center space-x-4'>
+              <div className='w-[330px] h-[76px] bg-[#1B2233] p-2 border border-[#FE0000] rounded-[7px] flex flex-col justify-between'>
+                <div className='flex justify-between'>
+                  <div className='flex items-center w-[40px] h-[25px] bg-[#283343] rounded-[7px] justify-center'>
+                    <span className=" text-[#55657E] text-center text-[12px] font-[600]">Min</span>
+                  </div>
+                  <span className='flex'>
+                    <Image
+                      className="mr-4"
+                      src={"/t-icon.png"}
+                      alt="card"
+                      width={19}
+                      height={19}
+
+                    />
+                    <h2 className='font-[700] text-[18px] text-[#FFFFFF]'>0.91999970</h2>
+                  </span>
+                  <div className='flex items-center w-[40px] h-[25px] bg-[#283343] rounded-[7px] justify-center'>
+                    <span className=" text-[#55657E] text-center text-[12px] font-[600]">1/2</span>
+                  </div>
+
+                </div>
+                <div className='flex justify-between'>
+                <div className='flex items-center w-[40px] h-[25px] bg-[#283343] rounded-[7px] justify-center'>
+                    <span className=" text-[#55657E] text-center text-[12px] font-[600]">Max</span>
+                  </div>
+                  <span className='flex'>
+                    <h2 className='font-[600] text-[14px] text-[#55657E] ml-2'>$0.9199997</h2>
+                  </span>
+                  <div className='flex items-center w-[40px] h-[25px] bg-[#283343] rounded-[7px] justify-center'>
+                    <span className=" text-[#55657E] text-center text-[12px] font-[600]">2x</span>
+                  </div>
+
+                </div>
+              </div>
+              <Button classname='w-[330px] h-[76px] bg-[#1B2233] text-[#FE0000] border border-[#4B5B74] rounded-[7px] uppercase font-semibold text-[18px] text-center' title='Red' />
+            </div>
+            <div className='flex justify-center space-x-4 py-3'>
+              <Button classname='w-[330px] h-[76px] bg-[#2283F6] text-[#FFFF] border border-[#4B5B74] rounded-[7px]  uppercase font-semibold text-[18px] text-center' title='start' />
+              <Button classname='w-[330px] h-[76px] bg-[#1B2233] text-[#297FE5] border border-[#4B5B74] rounded-[7px] uppercase font-semibold text-[18px] text-center' title='Black' />
+            </div>
           </div>
-        </div>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
         </div>
       </main>
     </>
