@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [data, setData] = useState(null);
-  const [count, setCount] = useState(20);
+  const [count, setCount] = useState(10);
   const [isActive, setIsActive] = useState(false);
   const [guess, setGuess] = useState(null)
   const fetchData = async () => {
@@ -23,6 +23,7 @@ export default function Home() {
         console.log(res);
         console.log(res.data);
         alert(res.data?.isCorrect == true ? "you are correct" : "wrong guess")
+        setCount(10)
       })
   };
 
@@ -66,10 +67,10 @@ export default function Home() {
       </Head>
       <main>
         <div className='flex items-center justify-center h-[100vh] w-full'>
-          <div className='bg-black w-[818px] h-[627px] rounded-md'>
+          <div className='bg-black w-[818px] h-[627px] rounded-md relative'>
             {
               isActive ? (
-               <div>
+               <div className="absolute">
                  <h1 className="text-slate-100 pt-4 pl-4 text-lg">
                   Lock you guess in {count} seconds
                 </h1>
